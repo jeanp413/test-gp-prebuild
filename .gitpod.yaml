@@ -3,6 +3,8 @@ tasks:
   - init: |
       npm install
       sleep 120
+  - command: |
+      echo "Hellow!"
 github:
   prebuilds:
     master: true
