@@ -1,5 +1,7 @@
 FROM buildpack-deps:jammy
 
+ARG FOO=1
+
 COPY install-packages upgrade-packages /usr/bin/
 
 ### base ###
