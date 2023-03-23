@@ -1,6 +1,6 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
-image:
-  file: Dockerfile
+image: eu.gcr.io/gitpod-core-dev/dev/dev-environment:kylos101-jam-dev-image.2
+  # file: Dockerfile
 tasks:
   - init: |
       npm install
