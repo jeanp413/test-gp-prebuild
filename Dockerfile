@@ -1,4 +1,4 @@
-FROM buildpack-deps:jammy
+FROM buildpack-deps:bionic
 
 ARG FOO=1
 
