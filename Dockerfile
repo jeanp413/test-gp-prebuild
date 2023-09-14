@@ -1,46 +1,40 @@
-FROM buildpack-deps:bionic
+FROM ubuntu:18.04
 
-ARG FOO=1
+ARG DEBIAN_FRONTEND=noninteractive
 
-COPY install-packages upgrade-packages /usr/bin/
+RUN apt-get update && apt-get install -y software-properties-common
+RUN add-apt-repository ppa:git-core/ppa -y
 
-### base ###
-RUN yes | unminimize \
-    && install-packages \
-        zip \
-        unzip \
-        bash-completion \
-        build-essential \
-        ninja-build \
-        htop \
-        iputils-ping \
-        jq \
-        less \
-        locales \
-        man-db \
-        nano \
-        ripgrep \
-        software-properties-common \
-        sudo \
-        stow \
-        time \
-        emacs-nox \
-        vim \
-        multitail \
-        lsof \
-        ssl-cert \
-        fish \
-        zsh \
-    && locale-gen en_US.UTF-8
-
-ENV LANG=en_US.UTF-8
-
-### Update and upgrade the base image ###
-RUN upgrade-packages
-
-### Git ###
-RUN add-apt-repository -y ppa:git-core/ppa
-RUN install-packages git git-lfs
+RUN apt-get update && apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    file \
+    git \
+    gnome-keyring \
+    iproute2 \
+    libfuse2 \
+    libgconf-2-4 \
+    libgdk-pixbuf2.0-0 \
+    libgl1 \
+    libgtk-3.0 \
+    libsecret-1-dev \
+    libkrb5-dev \
+    libssl-dev \
+    libx11-dev \
+    libx11-xcb-dev \
+    libxkbfile-dev \
+    locales \
+    lsb-release \
+    lsof \
+    python-dbus \
+    python3-pip \
+    sudo \
+    wget \
+    xvfb \
+    tzdata \
+    unzip \
+    jq
 
 ### Gitpod user ###
 # '-l': see https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#user
