@@ -67,4 +67,4 @@ RUN cd /workspace && \
     wget https://unofficial-builds.nodejs.org/download/release/v18.16.1/node-v18.16.1-linux-x64-glibc-217.tar.gz && \
     tar -xzf node-v18.16.1-linux-x64-glibc-217.tar.gz  -C custom_node --strip-components 1
 
-ENV VSCODE_NODE=/workspace/custom_node/bin/node
+ENV VSCODE_NODE1=/workspace/custom_node/bin/node
