@@ -62,8 +62,8 @@ RUN sudo echo "Running 'sudo' for Gitpod: success" && \
 # Custom PATH additions
 ENV PATH=$HOME/.local/bin:/usr/games:$PATH
 
-RUN cd /workspace && /
-    mkdir custom_node && /
+RUN cd /workspace && \
+    mkdir custom_node && \
     wget https://unofficial-builds.nodejs.org/download/release/v18.16.1/node-v18.16.1-linux-x64-glibc-217.tar.gz && \
     tar -xzf node-v18.16.1-linux-x64-glibc-217.tar.gz  -C custom_node --strip-components 1
 
