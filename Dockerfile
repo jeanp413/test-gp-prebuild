@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -60,9 +60,9 @@ RUN sudo echo "Running 'sudo' for Gitpod: success" && \
 # Custom PATH additions
 ENV PATH=$HOME/.local/bin:/usr/games:$PATH
 
-RUN cd /workspace && \
+RUN cd /home/gitpod && \
     mkdir custom_node && \
     wget https://unofficial-builds.nodejs.org/download/release/v18.16.1/node-v18.16.1-linux-x64-glibc-217.tar.gz && \
     tar -xzf node-v18.16.1-linux-x64-glibc-217.tar.gz  -C custom_node --strip-components 1
 
-ENV VSCODE_NODE1=/workspace/custom_node/bin/node
+ENV VSCODE_NODE=/home/gitpod/custom_node/bin/node
