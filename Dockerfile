@@ -65,4 +65,4 @@ RUN cd /home/gitpod && \
     wget https://unofficial-builds.nodejs.org/download/release/v18.16.1/node-v18.16.1-linux-x64-glibc-217.tar.gz && \
     tar -xzf node-v18.16.1-linux-x64-glibc-217.tar.gz  -C custom_node --strip-components 1
 
-ENV VSCODE_NODE=/home/gitpod/custom_node/bin/node
+ENV GP_VSCODE_NODE=/home/gitpod/custom_node/bin/node
